@@ -51,9 +51,9 @@ class FetchClass {
     });
 
     delete = createAsyncThunk("book/delete", 
-    async (payload: IBook) => {
+    async (_id: string) => {
         const res: Response = 
-        await fetch(`${URL}/${payload._id}`, {
+        await fetch(`${URL}/${_id}`, {
             method: "DELETE"
         });
         if (!res.ok) throw new Error(res.statusText);
